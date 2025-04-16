@@ -1,0 +1,291 @@
+// Define a color variable
+$primary-color: #075e54;
+$secondary: #0D3249;
+$secondary-color: #129C7E;
+$full-green: #25D366;
+$light-green: #DCF8C6;
+$blue: #DCF8C6;
+$gray: #DCF8C6;
+
+
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+
+// chat app 
+.home {
+  background-color: $secondary;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+
+    @include tablet {
+      width: 90%;
+    }
+
+
+    // sidebar 
+    .sidebar {
+      flex: 1;
+      background-color: $secondary-color;
+      position: relative;
+
+      //navbar 
+      .navbar {
+        display: flex;
+        align-items: center;
+        background-color: $secondary;
+        border-right: 1px;
+        border-color: $secondary-color;
+        border-style: solid;
+        height: 70px;
+        padding: 10px;
+        justify-content: space-between;
+        color: #ddddf7;
+
+        .logo {
+          font-weight: 400;
+          font-size: 20px;
+          padding: 20px;
+
+          @include tablet {
+            display: none;
+          }
+        }
+
+        .user {
+          display: flex;
+          gap: 10px;
+
+          img {
+            background-color: $gray;
+            height: 34px;
+            width: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          button {
+            background-color: $secondary-color;
+            color: $gray;
+            padding: 5px 20px;
+            border-radius: 2px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+
+            @include tablet {
+              position: absolute;
+              bottom: 10px;
+            }
+          }
+        }
+      }
+
+
+      // search style 
+      .search {
+        border-bottom: 1px solid #fff;
+
+        .searchForm {
+          padding: 10px;
+
+          input {
+            background-color: transparent;
+            border: none;
+            color: white;
+            outline: none;
+
+            &::placeholder {
+              color: $gray;
+            }
+          }
+        }
+      }
+
+
+      // persons style 
+      .userChat {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($secondary-color, 5%);
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .userChatInfo {
+          span {
+            font-size: 18px;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: 14px;
+            color: lightgray;
+          }
+        }
+      }
+    }
+
+
+    // chats area 
+    .chat {
+      flex: 2;
+
+      // each message 
+      .chatInfo {
+        height: 70px;
+        background-color: $secondary;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        color: lightgray;
+      }
+
+      .chatIcons {
+        display: flex;
+        gap: 10px;
+
+        img {
+          height: 34px;
+          cursor: pointer;
+        }
+      }
+
+      .messages {
+        background-color: $primary-color;
+        padding: 10px;
+        height: calc(100% - 120px);
+        overflow: scroll;
+
+
+        .message {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+
+          .messageInfo {
+            display: flex;
+            flex-direction: column;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+
+          .messageContent {
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            p {
+              background-color: white;
+              padding: 10px 20px;
+              border-radius: 0px 10px 10px 10px;
+              max-width: max-content;
+            }
+
+            img {
+              width: 50%;
+            }
+          }
+
+          &.owner {
+            flex-direction: row-reverse;
+
+            .messageContent {
+              align-items: flex-end;
+
+              p {
+                background-color: $gray;
+                color: #333;
+                border-radius: 10px 0px 10px 10px;
+              }
+            }
+          }
+        }
+      }
+
+      .input {
+        height: 50px;
+        background-color: white;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          color: $secondary;
+          font-size: 18px;
+
+          &::placeholder {
+            color: lightgray;
+          }
+        }
+
+        .send {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            height: 24px;
+            cursor: pointer;
+          }
+
+          button {
+            border: none;
+            padding: 10px 30px;
+            color: white;
+            background-color: $secondary-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

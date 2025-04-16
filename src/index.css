@@ -1,0 +1,45 @@
+/* Tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* font for our project  */
+@layer base {
+    html {
+        font-family: 'Poppins', 'san-serif';
+    }
+}
+
+/* reset page  */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+@layer components {
+    .input-box {
+        @apply w-full text-sm bg-transparent border-[1.5px] px-5 py-3 rounded mb-4 outline-none
+    }
+
+    .btn {
+        @apply text-sm bg-phover text-white my-1 border-[1.5px] px-5 py-3 rounded mb-4 outline-none
+    }
+
+    .btn-add {
+        @apply flex items-center gap-2 text-sm bg-phover text-white my-1 border-[1.5px] px-5 py-2 rounded mb-4 outline-none
+    }
+
+    .icon-btn {
+        @apply text-2xl cursor-pointer
+    }
+
+    .input-label {
+        @apply text-2xl text-slate-500 mb-2 mt-4 font-semibold
+    }
+
+    .btn-large {
+        @apply flex items-center gap-2 bg-darkblue py-3 px-8 text-white rounded-full m-auto md:m-0 hover:scale-105 transition-all duration-300
+    }
+}

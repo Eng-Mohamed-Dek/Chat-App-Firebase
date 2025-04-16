@@ -1,0 +1,27 @@
+[
+    {
+        "name" : "Realtime Chatting",
+        "desc" : "Manage All Your Chats You have as You Desire.",
+        "img" : "./icon-dotwhite.png"
+    },
+    {
+        "name" : "Connect Friends",
+        "desc" : "See Your Friends Chats and Chat them again.",
+        "img" : "./chat.svg"
+    },
+    {
+        "name" : "Introduce Yourself",
+        "desc" : "Learn new people and Chat with them.",
+        "img" : "./self.svg"
+    },
+    {
+        "name" : "Search Other",
+        "desc" : "Easy to use search feature inside.",
+        "img" : "./search.svg"
+    },
+    {
+        "name" : "Analysis",
+        "desc" : "Analyse all your Chats and Easy visualise it.",
+        "img" : "./analysis.svg"
+    }    
+]
